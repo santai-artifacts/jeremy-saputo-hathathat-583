@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #000000;
+            background: #FFB6D9;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -263,7 +263,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>let's hang man</h1>
+        <h1>let's hang woman</h1>
         <p class="subtitle">Guess the word before the hangman is complete</p>
 
         <div class="game-wrapper">
@@ -348,10 +348,10 @@
             ctx.lineTo(200, 70);
             ctx.stroke();
 
-            // Black top hat (always drawn)
-            ctx.fillStyle = '#000000';
+            // Pink top hat (always drawn)
+            ctx.fillStyle = '#FF69B4';
             ctx.lineWidth = 2;
-            ctx.strokeStyle = '#333';
+            ctx.strokeStyle = '#FF1493';
             // Hat brim
             ctx.beginPath();
             ctx.ellipse(200, 65, 35, 8, 0, 0, Math.PI * 2);
@@ -384,36 +384,58 @@
             ctx.fill();
             ctx.stroke();
 
-            // Eyes (always drawn)
-            // Left eye
-            ctx.fillStyle = '#333';
-            ctx.beginPath();
-            ctx.arc(190, 92, 4, 0, Math.PI * 2);
-            ctx.fill();
-            // Right eye with monocle
-            ctx.fillStyle = '#FFD9B3';
-            ctx.beginPath();
-            ctx.arc(215, 92, 8, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.strokeStyle = '#333';
+            // Sunglasses (always drawn)
             ctx.lineWidth = 2;
+            ctx.strokeStyle = '#333';
+            ctx.fillStyle = 'rgba(100, 100, 100, 0.5)';
+            // Left lens
+            ctx.beginPath();
+            ctx.ellipse(185, 92, 10, 8, 0, 0, Math.PI * 2);
+            ctx.fill();
             ctx.stroke();
-            // Monocle glass
-            ctx.fillStyle = 'rgba(173, 216, 230, 0.3)';
+            // Right lens
             ctx.beginPath();
-            ctx.arc(215, 92, 8, 0, Math.PI * 2);
+            ctx.ellipse(215, 92, 10, 8, 0, 0, Math.PI * 2);
             ctx.fill();
-            // Eye behind monocle
-            ctx.fillStyle = '#333';
+            ctx.stroke();
+            // Bridge
             ctx.beginPath();
-            ctx.arc(215, 92, 3, 0, Math.PI * 2);
-            ctx.fill();
+            ctx.moveTo(195, 92);
+            ctx.lineTo(205, 92);
+            ctx.stroke();
+            // Left temple
+            ctx.beginPath();
+            ctx.moveTo(175, 92);
+            ctx.lineTo(160, 95);
+            ctx.stroke();
+            // Right temple
+            ctx.beginPath();
+            ctx.moveTo(225, 92);
+            ctx.lineTo(240, 95);
+            ctx.stroke();
 
-            // Mouth (always drawn) - smiling with tongue out
+            // Mouth (always drawn) - smiling with teeth and tongue out
             ctx.strokeStyle = '#333';
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.arc(200, 105, 8, 0, Math.PI, false);
+            ctx.stroke();
+            // Teeth
+            ctx.fillStyle = 'white';
+            ctx.fillRect(192, 105, 16, 4);
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(196, 105);
+            ctx.lineTo(196, 109);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(200, 105);
+            ctx.lineTo(200, 109);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(204, 105);
+            ctx.lineTo(204, 109);
             ctx.stroke();
             // Tongue sticking out
             ctx.fillStyle = '#FF69B4';
